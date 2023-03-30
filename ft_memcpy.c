@@ -6,27 +6,27 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:40 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/06 22:06:40 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 09:57:06 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-    size_t          i;
-    unsigned char   *ptr1;
-    unsigned char   *ptr2;
+	size_t			i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 
-    i = 0;
-    ptr1 = (unsigned char *)dst;
-    ptr2 = (unsigned char *)src;
-    while (i < n)
-    {
-        ptr1[i] = ptr2[i];
-        i++;
-    }
-    return (dst);
+	i = 0;
+	ptr1 = (unsigned char *)dst;
+	ptr2 = (unsigned char *)src;
+	while (i < n)
+	{
+		ptr1[i] = ptr2[i];
+		i++;
+	}
+	return (dst);
 }
 
 // Notes:

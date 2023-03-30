@@ -6,16 +6,17 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 23:55:44 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/12 23:55:44 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 11:50:10 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    ft_lstlast(*lst)-> next = new;
-    new-> next = NULL;
+	new -> next;
+	next = NULL;
+	ft_lstlast(*lst)-> next = new;
 }
 
 // int main()

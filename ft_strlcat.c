@@ -6,36 +6,36 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:31:53 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/06 21:31:53 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 11:52:43 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t  i;
-    size_t  dstlen;
-    size_t  srclen;
+	size_t	i;
+	size_t	dstlen;
+	size_t	srclen;
 
-    i = 0;
-    dstlen = 0;
-    srclen = 0;
-    if (!dst || !src)
-        return (0);
-    while (dst[dstlen])
-        dstlen++;
-    while (src[srclen])
-        srclen++;
-    if (dstlen > size)
-        return (srclen + size);
-    while (src[i] && i < size - 1)
-    {
-        dst[dstlen + i] = src[i];
-        i++;
-    }
-    dst[dstlen + i] = '\0';
-    return (dstlen + srclen);
+	i = 0;
+	dstlen = 0;
+	srclen = 0;
+	if (!dst || !src)
+		return (0);
+	while (dst[dstlen])
+		dstlen++;
+	while (src[srclen])
+		srclen++;
+	if (dstlen > size)
+		return (srclen + size);
+	while (src[i] && i < size - 1)
+	{
+		dst[dstlen + i] = src[i];
+		i++;
+	}
+	dst[dstlen + i] = '\0';
+	return (dstlen + srclen);
 }
 
 // Note:
@@ -50,13 +50,13 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
 
 // o n e _ _ _ _
 
-int main()
-{
-    char dst[] = "";
-    char src[] = "this";
+// int main()
+// {
+//     char dst[] = "";
+//     char src[] = "this";
 
-    printf("%ld\n", ft_strlcat(dst, src, 3));
-}
+//     printf("%ld\n", ft_strlcat(dst, src, 3));
+// }
 
 //Note:
 // when compiling strlcat add -lbsd flag

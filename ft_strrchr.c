@@ -6,26 +6,26 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:09:07 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/05 23:09:07 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 11:53:38 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(char *s, int c)
+char	*ft_strrchr(char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    while (i >= 0)
-    {
-        if (s[i] == c)
-            return (&s[i]);
-        i--;
-    }
-    return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == c)
+			return (&s[i]);
+		i--;
+	}
+	return (0);
 }
 
 // #include<stdio.h>
@@ -39,5 +39,5 @@ char    *ft_strrchr(char *s, int c)
 //     if (ptr == NULL)
 //         printf("The character %c is not found in %s\n", c, s);
 //     else
-//         printf("The last occurrence of the character %c found in %s in position %d\n", c, s, (int)(ptr - s));
+//         printf("last occurrence of %c: %d\n", c, s, (int)(ptr - s));
 // }

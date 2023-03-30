@@ -6,51 +6,52 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:47:18 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/08 19:47:18 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 09:37:37 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int numlen(int n)
+static int	numlen(int n)
 {
-    int numlen;
+	int	numlen;
 
-    numlen = 0;
-    if (n < 0)
-        numlen++;
-    while (n != 0)
-    {
-        numlen++;
-        n /= 10;
-    }
-    return (numlen);
+	numlen = 0;
+	if (n < 0)
+		numlen++;
+	while (n != 0)
+	{
+		numlen++;
+		n /= 10;
+	}
+	return (numlen);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char    *res;
-    int     l;
+	char	*res;
+	int		l;
 
-    l = numlen(n);
-    if (n == -2147483648)
-        return (ft_strdup("-2147483648"));
-    else if (n == 0)
-        return (ft_strdup("0"));
-    if (!(res = malloc(l * sizeof(char) + 1)))
-        return (0);
-    res [l] = '\0';
-    if (n < 0)
-    {
-        res[0] = '-';
-        n = -n;
-    }
-    while (n != 0)
-    {
-        res[l-- - 1] = (n % 10) + '0';
-        n /= 10;
-    }
-    return (res);
+	l = numlen(n);
+	res = malloc(l * sizeof(char) + 1);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	else if (n == 0)
+		return (ft_strdup("0"));
+	if (!res)
+		return (0);
+	res [l] = '\0';
+	if (n < 0)
+	{
+		res[0] = '-';
+		n = -n;
+	}
+	while (n != 0)
+	{
+		res[l-- - 1] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (res);
 }
 
 // [- 2 3 4 5 \0]

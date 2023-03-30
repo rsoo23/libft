@@ -6,21 +6,22 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:47:41 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/10 16:47:41 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 11:51:16 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *new_elem; 
-    
-    if (!(new_elem = malloc(sizeof(t_list))))
-        return (0);
-    new_elem-> content = content;
-    new_elem-> next = NULL;
-    return (new_elem);
+	t_list	*new_elem;
+
+	new_elem = malloc(sizeof(t_list));
+	if (!new_elem)
+		return (0);
+	new_elem -> content = content;
+	new_elem -> next = NULL;
+	return (new_elem);
 }
 
 // int main()

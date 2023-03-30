@@ -6,21 +6,22 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 23:13:07 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/14 23:13:07 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 09:46:34 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    t_list  *temp;
-    while (*lst)
-    {
-        temp = *lst;
-        *lst = *lst-> next;
-        del(temp-> content);
-        free(temp);
-    }
-    *lst = NULL;
+	t_list	*temp;
+
+	while (*lst)
+	{
+		temp = *lst;
+		*lst = *lst-> next;
+		del(temp-> content);
+		free(temp);
+	}
+	*lst = NULL;
 }

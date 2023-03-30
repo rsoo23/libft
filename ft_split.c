@@ -6,83 +6,80 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:33:55 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/08 17:33:55 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 10:07:18 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int is_del(char s, char c)
+static int	is_del(char s, char c)
 {
-    if (s == c)
-        return (1);
-    return (0);
+	if (s == c)
+		return (1);
+	return (0);
 }
 
-static int wordnum(char const *s, char c)
+static int	wordnum(char const *s, char c)
 {
-    unsigned int i;
-    unsigned int wordnum;
+	unsigned int	i;
+	unsigned int	wordnum;
 
-    i = 0;
-    wordnum = 0;
-    while (s[i])
-    {
-        while (s[i] && is_del(s[i], c))
-            i++;
-        if (s[i] && !is_del(s[i], c))
-            wordnum++;
-        while (s[i] && !is_del(s[i], c))
-            i++;
-    }
-    return (wordnum);
+	i = 0;
+	wordnum = 0;
+	while (s[i])
+	{
+		while (s[i] && is_del(s[i], c))
+			i++;
+		if (s[i] && !is_del(s[i], c))
+			wordnum++;
+		while (s[i] && !is_del(s[i], c))
+			i++;
+	}
+	return (wordnum);
 }
 
-static int wordlen(char const *s, unsigned int i, char c)
+static int	wordlen(char const *s, unsigned int i, char c)
 {
-    unsigned int    j;
-    unsigned int    wordlen;
+	unsigned int	j;
+	unsigned int	wordlen;
 
-    j = 0;
-    wordlen = 0;
-    while (s[i + j] && !is_del(s[i + j], c))
-    {
-        wordlen++;
-        j++;
-    }
-    return (wordlen);
+	j = 0;
+	wordlen = 0;
+	while (s[i + j] && !is_del(s[i + j], c))
+	{
+		wordlen++;
+		j++;
+	}
+	return (wordlen);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char            **res;
-    unsigned int    i;
-    unsigned int    j;
-    unsigned int    k;
+	char			**res;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
-    i = 0;
-    j = 0;
-    k = 0;
-    res = malloc(sizeof(char *) * (wordnum(s, c) + 1));
-    if (!res)
-        return (0);
-    while (s[i])
-    {
-        while (s[i] && is_del(s[i], c))
-            i++;
-        if (!s[i])
-            break ;
-        res[j] = malloc(sizeof(char) * (wordlen(s, i, c) + 1));
-        if (!res[j])
-            return (0);
-        k = 0;
-        while (s[i] && !is_del(s[i], c))
-            res[j][k++] = s[i++];
-        res[j][k] = '\0';
-        j++;
-    }
-    res[j] = 0;
-    return (res);
+	i = 0;
+	j = 0;
+	res = malloc(sizeof(char *) * (wordnum(s, c) + 1));
+	if (!res)
+		return (0);
+	while (s[i])
+	{
+		while (s[i] && is_del(s[i], c))
+			i++;
+		if (!s[i])
+			break ;
+		res[j] = malloc(sizeof(char) * (wordlen(s, i, c) + 1));
+		k = 0;
+		while (s[i] && !is_del(s[i], c))
+			res[j][k++] = s[i++];
+		res[j][k] = '\0';
+		j++;
+	}
+	res[j] = 0;
+	return (res);
 }
 
 // Note: the break is to exit when a null terminator is detected

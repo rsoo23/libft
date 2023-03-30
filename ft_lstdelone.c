@@ -6,16 +6,16 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:04:20 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/14 22:04:20 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 09:47:07 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstdelone(t_list *lst, void(*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    del(lst-> content);
-    free(lst);
+	del(lst-> content);
+	free(lst);
 }
 
 // void    ft_del(void* content)

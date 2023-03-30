@@ -6,19 +6,19 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 23:52:02 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/12 23:52:02 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 09:47:54 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    if (!lst)
-        return (0);
-    while (lst->next)
-        lst = lst->next;
-    return (lst);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 // int main()

@@ -6,16 +6,16 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 00:49:30 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/09 00:49:30 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 10:00:17 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    while (*s)
-        write(fd, &(*s++), 1);
+	while (*s)
+		write(fd, &(*s++), 1);
 }
 
 // int main()

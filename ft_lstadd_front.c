@@ -6,16 +6,16 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 22:25:23 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/12 22:25:23 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/03/30 11:50:25 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    new-> next = *lst;
-    *lst = new;
+	new -> next = *lst;
+	*lst = new;
 }
 
 // int main()
@@ -55,8 +55,7 @@ void    ft_lstadd_front(t_list **lst, t_list *new)
 // the pointer within the function would only affect the copy, not the original 
 // pointer.
 // By passing a pointer to a pointer (t_list **lst), the function receives the 
-// address of the original pointer. This allows the function to modify the original 
-// pointer by dereferencing the pointer-to-pointer (*lst) and setting it to a new value 
-// (i.e., the address of the new node). This way, any changes made to the pointer 
-// within the function will affect the original pointer.
-
+// address of the original pointer. This allows the function to modify the 
+// original pointer by dereferencing the pointer-to-pointer (*lst) and setting 
+// it to a new value (i.e., the address of the new node). This way, any changes 
+// made to the pointer within the function will affect the original pointer.
