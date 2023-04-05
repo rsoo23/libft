@@ -6,13 +6,13 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 23:47:11 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:49:58 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/06 21:10:22 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	ft_lstmap(t_list *lst, void *(*f)(void*), void(*del)(void*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void(*del)(void*))
 {
 	t_list	*new_lst;
 	t_list	*temp;

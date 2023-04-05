@@ -6,11 +6,15 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 23:13:07 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:46:34 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/06 21:08:50 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Deletes and frees the given element and every successor of 
+// that element, using the function ’del’ and free(3). Finally, 
+// the pointer to the list must be set to NULL.
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
@@ -19,8 +23,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (*lst)
 	{
 		temp = *lst;
-		*lst = *lst-> next;
-		del(temp-> content);
+		*lst = (*lst)->next;
+		del(temp->content);
 		free(temp);
 	}
 	*lst = NULL;

@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:16:05 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/06 20:03:38 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/06 21:10:40 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void*));
-t_list	ft_lstmap(t_list *lst, void *(*f)(void*), void(*del)(void*));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void(*del)(void*));
 
 #endif
