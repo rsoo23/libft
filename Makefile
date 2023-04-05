@@ -6,7 +6,7 @@
 #    By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 20:26:20 by rsoo              #+#    #+#              #
-#    Updated: 2023/03/09 20:26:20 by rsoo             ###   ########.fr        #
+#    Updated: 2023/04/06 20:03:06 by rsoo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all: $(LIB)
 
 $(LIB): $(OBJS)
 	@echo "Creating library..."
-	@ar rcs $(LIB) ft_memset.o $(filter-out ft_memset.o,$(OBJS))
+	@ar rcs $(LIB) $(OBJS)
 
 $(OBJS): $(CFILES) 
 	@echo "Creating object files..."
@@ -47,4 +47,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY = clean fclean re
+.PHONY = clean fclean re all
