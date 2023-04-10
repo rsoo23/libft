@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:00:03 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:54:57 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/10 11:58:22 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t			i;
 
 	ptr1 = (unsigned char *)s;
+	i = 0;
 	while (i < n)
 	{
 		if (ptr1[i++] == (unsigned char)c)

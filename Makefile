@@ -6,7 +6,7 @@
 #    By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 20:26:20 by rsoo              #+#    #+#              #
-#    Updated: 2023/04/06 22:27:48 by rsoo             ###   ########.fr        #
+#    Updated: 2023/04/10 11:57:26 by rsoo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,6 @@ OBJS_B = $(CFILES_B:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 all: $(LIB)
 
