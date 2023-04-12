@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:33:55 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 10:07:18 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 10:45:10 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static int	wordnum(char const *s, char c)
 
 	i = 0;
 	wordnum = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] && is_del(s[i], c))
@@ -45,6 +47,8 @@ static int	wordlen(char const *s, unsigned int i, char c)
 
 	j = 0;
 	wordlen = 0;
+	if (!s)
+		return (0);
 	while (s[i + j] && !is_del(s[i + j], c))
 	{
 		wordlen++;
@@ -63,7 +67,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	res = malloc(sizeof(char *) * (wordnum(s, c) + 1));
-	if (!res)
+	if (!res || !s)
 		return (0);
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 23:38:36 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:47:26 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 10:57:35 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
+	if (!lst || !f)
+		return ;
 	while (lst)
 	{
 		f(lst-> content);

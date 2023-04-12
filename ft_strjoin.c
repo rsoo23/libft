@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:57:14 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 11:52:15 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 09:50:52 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (0);
 	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!res)
 		return (0);

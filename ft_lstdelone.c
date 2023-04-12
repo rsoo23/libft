@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:04:20 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:47:07 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 10:49:24 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (!lst || !del)
+		return ;
 	del(lst-> content);
 	free(lst);
 }

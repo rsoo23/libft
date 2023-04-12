@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:14:14 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 10:08:48 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 09:32:52 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strdup(const char *s)
 	char	*dest;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 		i++;
 	dest = malloc(sizeof(char) * (i + 1));
+	if (!dest)
+		return (0);
 	i = 0;
 	while (s[i])
 	{

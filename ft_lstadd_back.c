@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 23:55:44 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/03 22:06:30 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 12:44:45 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_lstlast(*lst)-> next = new;
-	new-> next = NULL;
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	ft_lstlast(*lst)->next = new;
+	new->next = NULL;
 }
 
 // int main()

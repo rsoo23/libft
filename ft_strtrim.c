@@ -6,22 +6,19 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:17:03 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 11:53:53 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 16:24:04 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_wspace(char c, char const *set)
+static int	is_wspace(char c, char const *set)
 {
-	int	i;
-
-	i = 0;
-	while (set[i])
+	while (*set)
 	{
-		if (c == set[i])
+		if (c == *set)
 			return (1);
-		i++;
+		set++;
 	}
 	return (0);
 }
@@ -29,29 +26,34 @@ int	is_wspace(char c, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	i;
-	unsigned int	len;
+	unsigned int	j;
+	unsigned int	k;
 	char			*res;
 
 	i = 0;
-	len = 0;
+	j = ft_strlen(s1) - 1;
+	k = 0;
+	if (!s1 || !set)
+		return (0);
 	while (s1[i] && is_wspace(s1[i], set))
 		i++;
-	while (s1[i + len] && !is_wspace(s1[i], set))
-		len++;
-	res = malloc(len * sizeof(char) + 1);
+	if (s1[i] == '\0')
+		return ("");
+	while (s1[j] && is_wspace(s1[j], set))
+		j--;
+	res = malloc((j - i + 1) * sizeof(char) + 1);
 	if (!res)
 		return (0);
-	len = 0;
-	while (s1[i] && !is_wspace(s1[i], set))
-		res[len++] = s1[i++];
-	res[len] = '\0';
+	while (i <= j)
+		res[k++] = s1[i++];
+	res[k] = '\0';
 	return (res);
 }
 
 // int main()
 // {
-//     char s1[] = "racecar";
-//     char *set = "r";
+//     char s1[] = "  \t \t \n   \n\n\n\t";
+//     char *set = " \n\t";
 
 //     printf("%s\n", ft_strtrim(s1, set));
 // }

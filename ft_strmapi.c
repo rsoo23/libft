@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:05:49 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 10:14:47 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 10:30:46 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*res;
 
 	i = 0;
-	res = malloc(sizeof(char) * i + 1);
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		f(i, s[i]);
 		i++;
 	}
+	res = malloc(sizeof(char) * i + 1);
 	if (!res)
 		return (0);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 23:13:07 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/06 21:08:50 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 10:50:40 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
+	if (!del || !lst)
+		return ;
 	while (*lst)
 	{
 		temp = *lst;

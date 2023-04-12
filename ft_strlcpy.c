@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:57:53 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 10:12:24 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/12 16:21:20 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	srclen;
+	size_t	dstlen;
 
 	i = 0;
 	srclen = 0;
-	if (!dst || !src)
-		return (0);
+	dstlen = 0;
 	while (src[srclen])
 		srclen++;
+	while (dst[dstlen])
+		dstlen++;
+	if (size == 0)
+		return (srclen);
 	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
