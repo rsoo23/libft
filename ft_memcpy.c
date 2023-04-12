@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:40 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/10 13:34:13 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/10 14:41:03 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
 
-	if (dst == NULL || src == NULL)
+	if (!dst && !src)
 		return (0);
 	i = 0;
 	ptr1 = (unsigned char *)dst;

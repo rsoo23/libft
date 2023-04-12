@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 00:29:02 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:58:29 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/10 15:38:26 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	i = 0;
 	ptr1 = (unsigned char *)dst;
 	ptr2 = (unsigned char *)src;
-	if (!dst || !src)
+	if (!dst && !src)
 		return (0);
 	if (ptr1 > ptr2)
 	{
