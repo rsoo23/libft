@@ -1,3 +1,5 @@
 # 42core_libft
 
-status: not yet evaluated
+| Testers                                   | Status |
+|-------------------------------------------|--------|
+|https://github.com/alelievr/libft-unit-test| Done   |
