@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:16:05 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/12 09:59:40 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/13 08:25:44 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // Testing libraries
 // #include <string.h>
 // #include <bsd/string.h>
-#include <stdio.h>
+// #include <stdio.h>
 // #include <stdint.h>
 
 typedef struct s_list

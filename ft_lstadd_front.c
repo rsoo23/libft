@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 22:25:23 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/03 21:57:12 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/13 08:26:19 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new-> next = *lst;
-	*lst = new; // sets the 'starting point' of the linked lists as new
+	new->next = *lst;
+	*lst = new;
 }
+
+// *lst = new: sets the 'starting point' of the linked lists as new
 
 // int main()
 // {
