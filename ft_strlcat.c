@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:31:53 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/12 14:54:01 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/13 10:34:33 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	dstlen = 0;
 	srclen = 0;
-	if (size == 0)
-		return (0);
 	while (dst[dstlen])
 		dstlen++;
 	while (src[srclen])
@@ -49,6 +47,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 
 
 // o n e _ _ _ _
+
+// #include <bsd/string.h>
 
 // int main()
 // {
