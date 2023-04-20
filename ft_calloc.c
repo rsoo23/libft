@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:26:21 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/12 14:11:50 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/17 14:31:39 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t n_elem, size_t size)
 {
 	size_t	*ptr;
 
+	if (n_elem == SIZE_MAX || size == SIZE_MAX)
+		return (0);
 	ptr = malloc(n_elem * size);
 	if (!ptr)
 		return (0);

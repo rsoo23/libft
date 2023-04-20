@@ -6,18 +6,18 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:47:18 by rsoo              #+#    #+#             */
-/*   Updated: 2023/03/30 09:37:37 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/04/20 08:57:04 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	numlen(int n)
+static int	ft_numlen(int n)
 {
 	int	numlen;
 
 	numlen = 0;
-	if (n < 0)
+	if (n <= 0)
 		numlen++;
 	while (n != 0)
 	{
@@ -27,31 +27,39 @@ static int	numlen(int n)
 	return (numlen);
 }
 
+static char	*ft_assign_num(char *res, long num, int l)
+{
+	res [l] = '\0';
+	if (num == 0)
+	{
+		res[0] = '0';
+		return (res);
+	}
+	if (num < 0)
+	{
+		res[0] = '-';
+		num = -num;
+	}
+	while (num != 0)
+	{
+		res[l-- - 1] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (res);
+}
+
 char	*ft_itoa(int n)
 {
+	long	num;
 	char	*res;
 	int		l;
 
-	l = numlen(n);
+	num = n;
+	l = ft_numlen(n);
 	res = malloc(l * sizeof(char) + 1);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	else if (n == 0)
-		return (ft_strdup("0"));
 	if (!res)
 		return (0);
-	res [l] = '\0';
-	if (n < 0)
-	{
-		res[0] = '-';
-		n = -n;
-	}
-	while (n != 0)
-	{
-		res[l-- - 1] = (n % 10) + '0';
-		n /= 10;
-	}
-	return (res);
+	return (ft_assign_num(res, num, l));
 }
 
 // [- 2 3 4 5 \0]
