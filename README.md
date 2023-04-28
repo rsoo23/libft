@@ -1,5 +1,7 @@
 # 42core_libft
 
+Create your first function library.
+
 | Testers                                   | Result | Minor Problems               |
 |-------------------------------------------|--------|------------------------------|
 |https://github.com/alelievr/libft-unit-test| 99%    | strlcat                      |
