@@ -6,4 +6,4 @@
 |https://github.com/jtoty/Libftest          | 100%   | None                         |
 |https://github.com/Tripouille/libftTester  | 98%    | strchr, strrchr, lstadd_back |
 
-Official Result: Yet to be submitted
+Official Result: 125/100
