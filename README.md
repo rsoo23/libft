@@ -9,3 +9,6 @@ Create your first function library.
 |https://github.com/Tripouille/libftTester  | 98%    | strchr, strrchr, lstadd_back |
 
 Official Result: 125/100
+
+Other functions added:
+ft_printf
