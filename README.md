@@ -12,3 +12,4 @@ Official Result: 125/100
 
 Other functions added:
 ft_printf
+get_next_line
