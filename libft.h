@@ -6,19 +6,19 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:16:05 by rsoo              #+#    #+#             */
-/*   Updated: 2023/04/13 09:55:42 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/05/28 20:43:03 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include <stdlib.h> // exit, malloc, free
+# include <unistd.h> // read, write, close
 # include <stdint.h>
-// Testing libraries
-// #include <string.h>
-// #include <stdio.h>
+# include <fcntl.h> // open
+# include <string.h> // strerror 
+# include <stdio.h> // perror
 
 typedef struct s_list
 {
