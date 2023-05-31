@@ -6,7 +6,7 @@
 /*   By: rsoo <rsoo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:16:05 by rsoo              #+#    #+#             */
-/*   Updated: 2023/05/28 20:43:03 by rsoo             ###   ########.fr       */
+/*   Updated: 2023/05/31 11:06:54 by rsoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include <stdlib.h> // exit, malloc, free
 # include <unistd.h> // read, write, close
 # include <stdint.h>
-# include <fcntl.h> // open
-# include <string.h> // strerror 
-# include <stdio.h> // perror
+// # include <fcntl.h> // open
+// # include <string.h> // strerror 
+// # include <stdio.h> // perror
+
+# include "get_next_line/get_next_line_bonus.h"
 
 typedef struct s_list
 {
