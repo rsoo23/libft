@@ -1,6 +1,6 @@
 # 42core_libft
 
-Create your first function library.
+This is my first C library. Includes all the basic functions for future use in more advanced 42 projects. 
 
 | Testers                                   | Result | Minor Problems               |
 |-------------------------------------------|--------|------------------------------|
