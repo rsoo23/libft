@@ -1,5 +1,6 @@
-# 42core_libft
+# libft
 
+42 Core Project Level: 0
 This is my first C library. Includes all the basic functions for future use in more advanced 42 projects. 
 
 | Testers                                   | Result | Minor Problems               |
