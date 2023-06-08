@@ -19,7 +19,6 @@
 // testing
 // # include <stdio.h>
 // # include <fcntl.h>  // open
-# include "../libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
@@ -33,5 +32,8 @@ char	*read_buffer_assign(int fd, char *endofline_buf);
 // get_next_line_utils_bonus.c
 int		ft_find_newline_pos(char *str);
 char	*ft_free_ret_null(char *free_str);
+char	*ft_strjoin_gnl(const char *s1, const char *s2);
+size_t	ft_strlen_gnl(const char *s);
+char	*ft_strdup_gnl(const char *s);
 
 #endif

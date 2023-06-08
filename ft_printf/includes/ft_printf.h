@@ -33,6 +33,7 @@ typedef struct s_form
 	char	spec;
 }				t_form;
 
+int		ft_printf(const char *s, ...);
 int		ft_parse(va_list ap, const char **s);
 // ft_format_check.c
 int		ft_valid_flag(const char s, char *flag_str);

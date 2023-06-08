@@ -47,7 +47,7 @@ char	*read_buffer_assign(int fd, char *buf)
 		if (read_num <= 0)
 			break ;
 		buffer[read_num] = '\0';
-		buf = ft_strjoin(buf, buffer);
+		buf = ft_strjoin_gnl(buf, buffer);
 	}
 	free(buffer);
 	if (read_num == -1)
@@ -62,12 +62,12 @@ char	*get_trimmed_line(char *untrimmed_line)
 	char	*trimmed_line;
 
 	len = -1;
-	if (!ft_strlen(untrimmed_line))
+	if (!ft_strlen_gnl(untrimmed_line))
 		return (NULL);
 	nl_pos = ft_find_newline_pos(untrimmed_line);
 	if (nl_pos == -1)
 	{
-		trimmed_line = ft_strdup(untrimmed_line);
+		trimmed_line = ft_strdup_gnl(untrimmed_line);
 		return (trimmed_line);
 	}
 	trimmed_line = malloc((nl_pos + 2) * sizeof(char));
@@ -91,7 +91,7 @@ char	*get_endofline_buf(char *buf)
 	nl_pos = ft_find_newline_pos(buf);
 	if (nl_pos == -1)
 		return (ft_free_ret_null(buf));
-	trimmed_buf = malloc((ft_strlen(buf) - nl_pos) * sizeof(char));
+	trimmed_buf = malloc((ft_strlen_gnl(buf) - nl_pos) * sizeof(char));
 	if (!trimmed_buf)
 		return (ft_free_ret_null(trimmed_buf));
 	nl_pos++;
