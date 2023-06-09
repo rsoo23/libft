@@ -28,31 +28,29 @@ OBJS_B = $(CFILES_B:.c=.o)
 GNLDIR = get_next_line/
 GNL_FILES = get_next_line_bonus.c get_next_line_utils_bonus.c
 GNL_CFILES = $(addprefix $(GNLDIR), $(GNL_FILES))
-OBJS_GNL = $(GNL_CFILES:.c=.o)
+GNL_OBJS = $(GNL_CFILES:.c=.o)
 
-FT_PRINTF_DIR = ft_printf
-FT_PRINTF = libftprintf.a
+FT_PRINTF_DIR = ft_printf/srcs/
+FT_PRINTF_SRCS = ft_format_check ft_format_check_1 ft_print_hex ft_print_int ft_print_ptr ft_print_uint ft_printf ft_utils ft_utils_1 ft_utils_2
+FT_PRINTF_CFILES = $(addprefix $(FT_PRINTF_DIR), $(addsuffix .c, $(FT_PRINTF_SRCS)))
+FT_PRINTF_OBJS = $(FT_PRINTF_CFILES:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(OBJS_GNL)
-	make -C $(FT_PRINTF_DIR)
-	$(AR) $(NAME) $(OBJS) $(OBJS_GNL) $(FT_PRINTF_DIR)/$(FT_PRINTF)
+$(NAME): $(OBJS) $(GNL_OBJS) $(FT_PRINTF_OBJS)
+	$(AR) $(NAME) $(OBJS) $(GNL_OBJS) $(FT_PRINTF_OBJS)
 
-bonus: $(OBJS) $(OBJS_B) $(OBJS_GNL)
-	make -C $(FT_PRINTF_DIR)
-	$(AR) $(NAME) $(OBJS) $(OBJS_B) $(OBJS_GNL) $(FT_PRINTF_DIR)/$(FT_PRINTF)
+bonus: $(OBJS) $(OBJS_B) $(GNL_OBJS) $(FT_PRINTF_OBJS)
+	$(AR) $(NAME) $(OBJS) $(OBJS_B) $(GNL_OBJS) $(FT_PRINTF_OBJS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B) $(OBJS_GNL)
-	make clean -C $(FT_PRINTF_DIR)
+	$(RM) $(OBJS) $(OBJS_B) $(GNL_OBJS) $(FT_PRINTF_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
-	make fclean -C $(FT_PRINTF_DIR)
 
 re: fclean all
 
